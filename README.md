@@ -13,5 +13,5 @@ here the link to the [original repo](https://github.com/godotengine/godot)
 
 ## The Language
 Like in the _"Things to change"_. The syntax would be changed, but mostly just different word choices, like func turns to function and the start of a code block would be {} not :
-Thing would be shorted like Vector3() to Vec3()
 
+Thing would be shorted like Vector3() to Vec3()
