@@ -9,7 +9,6 @@ here the link to the [original repo](https://github.com/godotengine/godot)
 
 1. Remove native script and visual script
 1. Simplify the documentation
-1. translate everything to the user's native language, **Including the programming language**
 
 ## The Language
 Like in the _"Things to change"_. The syntax would be changed, but mostly just different word choices. 
