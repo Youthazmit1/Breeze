@@ -33,7 +33,7 @@ static NavigationServer3D *navigation_server_3d = nullptr;
 static NavigationServer2D *navigation_server_2d = nullptr;
 static ThemeDb *theme_db = nullptr;
 
-// Errors out if setup2() doesn't turn true
+// Errors out if setup2() doesn't turn this true
 static bool _start_success = false;
 
 // Drivers
