@@ -131,5 +131,32 @@ static String get_full_version_string() {
 
 void initialize_physics() {
   // 3D physics server
-  physics_server_3d = PhysicsServer3DManager::gte_singleton()->new_server(
+  physics_server_3d = PhysicsServer3DManager::get_singleton()->new_server(
     GLOBAL_GET(PhysicsServer3DManager::setting_property_name));
+  
+  if (!physics_server_3d) {
+    physics_server_3d = PhysicsServer3DManager::get_singleton()->new_default_server();
+  }
+  
+  ERR_FAIL_COND(!physics_server_3d);
+  physics_server_3d->init();
+  
+  // 2D physics server
+  physics_server_2d = PhysicsServer2DManager::get_singleton()->new_server(
+    GLOBAL_GET(PhysicsServer2DManager::get_singleton()->new_default_server));
+  
+  if (!physics_server_2d) {
+    physics_server_2d = PhysicsServer2DManager::get_singleton()->new_default_server();
+  }
+  
+  ERR_FAIL_COND(!physics_server_2d);
+  physics_server_2d->init();
+}
+
+void finialize_physics() {
+  physics_server_3d->finish();
+  memdelete(physics_server_3d);
+  physics_server_2d->finish();
+  memdelete(physics_server_2d);
+}
+
